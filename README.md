@@ -1,126 +1,88 @@
-# ⬛ OptiImage Pro
 
-OptiImage is an elite, browser-based bulk image optimization pipeline. Designed with a strict, minimalist dark UI (inspired by Vercel's Geist design system), it allows developers and creators to resize, compress, and convert batches of images entirely on the client-side.
+# OptiImage - Elite Image Processing Pipeline ⚡️
 
-Your files never leave your device. Zero server dependency, maximum privacy, and lightning-fast execution.
+OptiImage is a high-performance, client-side image optimization and conversion tool built with React and Vite. Designed with a sleek, minimalist "Vercel Dark" aesthetic, it empowers developers and users to batch-process images entirely within the browser—ensuring maximum privacy and blazing-fast speeds.
 
-## ✨ Key Features
+## ✨ Features
 
-- **Batch Processing Pipeline:** Upload multiple files at once via drag-and-drop.
-- **Per-Image Configuration:** Apply unique settings to individual files or deploy a single configuration to the entire queue.
-- **Advanced Optimization Strategies:**
-  - **Quality Control:** Adjust compression levels to balance visual fidelity and file size.
-  - **Strict Target Size:** Set a maximum KB/MB limit, and let the engine calculate the optimal compression.
-  - **Dimension Resizing:** Force exact width and height constraints.
-- **Elite Dark Mode UI:** A distraction-free, terminal-inspired interface built for developers.
-- **Responsive Architecture:** Fully functional on desktop, tablet, and mobile devices with an adaptive layout.
-- **Client-Side Execution:** 100% browser-based processing.
+- **100% Client-Side Processing:** Your files never leave your device. All optimization happens locally in the browser.
+- **Batch Processing:** Drag, drop, and process dozens of images simultaneously.
+- **Granular Control:** Configure settings globally or per-image in the queue.
+- **Multiple Optimization Strategies:**
+  - **Quality:** Adjust compression levels to balance visual fidelity and file size.
+  - **Max Size:** Set a strict target file size (KB/MB), and let the engine calculate the optimal compression.
+  - **Resize:** Scale images by defining exact pixel dimensions.
+- **Extensive Format Support:** Convert to `WEBP`, `JPEG`, `PNG`, `AVIF`, `HEIC`, `TIFF`, `GIF`, and `ICO`.
+- **Elite Dark Mode UI:** A distraction-free, developer-centric interface inspired by Geist / Vercel UI.
+- **Mobile Responsive:** Fully functional and beautifully adapted for smaller screens.
 
 ## 🛠 Tech Stack
 
-- **Framework:** React 18 (via [Vite](https://vitejs.dev/))
+- **Framework:** [React 18](https://react.dev/) + [Vite](https://vitejs.dev/)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 - **Icons:** [Lucide React](https://lucide.dev/)
-- **Language:** JavaScript (ES6+)
-
----
 
 ## 🚀 Getting Started
 
-Follow these steps to run the OptiImage pipeline on your local environment.
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
-### 1. Initialize Project
-If you haven't already created a Vite project, generate one:
-```bash
-npm create vite@latest opti-image -- --template react
-cd opti-image
+### Prerequisites
+
+Make sure you have [Node.js](https://nodejs.org/) (version 16 or higher) and `npm` installed on your system.
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/FIQTOR/image-converter.git](https://github.com/FIQTOR/image-converter.git)
 
 ```
 
-### 2. Install Dependencies
-
-Install Tailwind CSS and Lucide icons:
-
+2. Navigate to the project directory:
 ```bash
-# Install core dependencies
+cd image-converter
+
+```
+
+
+3. Install the dependencies:
+```bash
 npm install
 
-# Install UI Icons
-npm install lucide-react
-
-# Install and configure Tailwind CSS
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-
 ```
 
-### 3. Configure Tailwind
 
-Update your `tailwind.config.js` to ensure Tailwind scans your React files, and add the custom screen breakpoint for smaller devices (`xs`):
-
-```javascript
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {
-      screens: {
-        'xs': '475px', // Added for optimal mobile rendering
-      }
-    },
-  },
-  plugins: [],
-}
-
-```
-
-Add Tailwind directives to your `src/index.css`:
-
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Custom Scrollbar for the dark theme */
-.custom-scrollbar::-webkit-scrollbar {
-  width: 6px;
-}
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 4px;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-```
-
-### 4. Deploy Local Server
-
-Paste the `Homepage.jsx` code into your `src/App.jsx` (or route it accordingly), then spin up the Vite development server:
-
+*(Note: Ensure you have `lucide-react` installed as it is required for the UI icons).*
+4. Start the development server:
 ```bash
-npm run dev
+npm start
 
 ```
 
----
 
-## 🧠 Upcoming Roadmap (Logic Implementation)
+5. Open your browser and visit `http://localhost:5173` to view the application.
 
-Currently, the UI provides a mock conversion to showcase the flow. To implement the actual engine logic in production, consider integrating the following libraries:
+## 💡 Usage
 
-* **[`browser-image-compression`](https://www.npmjs.com/package/browser-image-compression):** For handling the `Target Size` and `Quality` compression strategies locally.
-* **[`jszip`](https://www.google.com/search?q=https://www.npmjs.com/package/jszip) & [`file-saver`](https://www.npmjs.com/package/file-saver):** To bundle the processed images into a single `.zip` file when the user clicks "Download ZIP".
+1. **Upload:** Drag and drop your image files into the designated drop zone, or click to browse your file system.
+2. **Select & Configure:** Click on any file in the queue (left panel) to open its configuration (right panel).
+3. **Tweak Settings:** Choose your target format (e.g., WebP) and optimization strategy (Quality, Max Size, or Resize).
+4. **Apply to All (Optional):** Click the "Apply to all" icon in the configuration header to sync your current settings across the entire queue.
+5. **Deploy:** Click **"Deploy Optimization"** to start processing.
+6. **Download:** Once processing is complete, download your optimized assets in a single `.ZIP` file.
 
-## 📄 License
+## 🤝 Contributing
 
-This project is open-source and available under the [MIT License](https://www.google.com/search?q=LICENSE).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://www.google.com/search?q=https://github.com/FIQTOR/image-converter/issues).
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
 
 ```
