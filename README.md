@@ -33,7 +33,7 @@ Make sure you have [Node.js](https://nodejs.org/) (version 16 or higher) and `np
 ### Installation
 
 1. Clone the repository:
-   ```bash
+```bash
    git clone [https://github.com/FIQTOR/image-converter.git](https://github.com/FIQTOR/image-converter.git)
 
 ```
